@@ -7,3 +7,7 @@
 * Play: volumio.local/api/v1/commands/?cmd=play
 * Get current state: volumio.local/api/v1/getstate
 * Set volume: volumio.local/api/v1/commands/?cmd=volume&volume=80
+
+
+## Web radio urls:
+Rock the Craddle Radio: https://rockthecradle.stream.publicradio.org/rockthecradle.mp3
