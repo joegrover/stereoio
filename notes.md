@@ -10,6 +10,17 @@
 * No web UI (yet?)
 * Pretty slow calling up songs and radio stations
 
+## MPV commands:
+* Start with: `mpv --no-video --playlist=/path/to/playlist/stereoio.pls --playlist-start=pos --input-ipc-server=/tmp/mpvsocket --mute=yes`
+    - Probably want this to kick on at startup.
+    - `stereoio.pls` is just a plaintext file with radio urls on each line.
+    - `pos` is a 0-based index value of which line in the playlist you want to play. Should be read from a file representing the current physical position of the tuner knob.
+    - `mute=yes` starts the radio muted, this is so the rpi can powercycle without turning on the radio
+    - `--input-ipc-server=/tmp/mpvsocket` allows you to pass valid json to the running mpv instance. The following commands are ones we will want:
+        1. echo '{"command": ["playlist-pos", 1] }' | socat - /tmp/mpvsocket [change to playlist position 1]
+        2. { "command": ["cycle", "mute"] }
+        3. { "command": ["cycle", "pause"] }
+* Can have multiple instances of MPV running with different /tmp/sockets. Probably don't want more than like 3 since the Rpi is small and might get over worked.
 
 ## Web radio urls:
 * Rock the Craddle Radio: https://rockthecradle.stream.publicradio.org/rockthecradle.mp3
@@ -17,10 +28,14 @@
 * MPR news: https://nis.stream.publicradio.org/nis.mp3
 * classical MPR: https://cms.stream.publicradio.org/cms.mp3?cb=8600250482
 
+## YT playlists:
+* Vern's Dance Party: https://www.youtube.com/watch?list=PLWTMAv08KxuPRxkX2qAJBcVwmjn8RodGP
+* Vern's Mix tape: https://www.youtube.com/watch?list=PLWTMAv08KxuPfzsHDTKvjmAi02Elhz6ZQ
+
 ## ToDo:
 - [X] Order DAC (HiFiBerry AMP2)
 - [ ] Wire up volume knob [try this?](https://gist.github.com/thijstriemstra/6396142f426aeffb0c1c6507fb2acd7b)
-- [ ] Add platform for varicap tuner base
+- [X] Add platform for varicap tuner base
 - [ ] find way to wire varicap to pot
 - [ ] Wire up tuner knob (same way as volume knob?)
 - [ ] Switch to turn off microphone
