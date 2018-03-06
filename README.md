@@ -1,2 +1,2 @@
 # stereoio
-Controller for volumio that sends commands to volumio running on a raspberry pi based on physical knobs and switches
+Controller(?) for Gassistpi that sends commands to mpv running on a raspberry pi based on physical knobs and switches
