@@ -7,7 +7,7 @@
 * Simple Python based control
 
 **Downsides**
-* No web UI (yet?)
+* ~No web UI (yet?)~ Using this https://github.com/open-dynaMIX/simple-mpv-webui
 * Pretty slow calling up songs and radio stations
 
 ## MPV commands:
