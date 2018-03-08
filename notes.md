@@ -1,4 +1,4 @@
-## Switching to Gassitpi based radio:
+## Switching to [Gassitpi](https://github.com/shivasiddharth/GassistPi) based radio:
 **Benefits:**
 * Get a google home like thing
 * Can play songs by request from YouTube
@@ -11,6 +11,7 @@
 * Pretty slow calling up songs and radio stations
 
 ## MPV commands:
+### For streaming radio stations
 * Start with: `mpv --no-video --playlist=/path/to/playlist/stereoio.pls --playlist-start=pos --input-ipc-server=/tmp/mpvsocket --mute=yes`
     - Probably want this to kick on at startup.
     - `stereoio.pls` is just a plaintext file with radio urls on each line.
@@ -20,7 +21,7 @@
         1. echo '{"command": ["playlist-pos", 1] }' | socat - /tmp/mpvsocket [change to playlist position 1]
         2. { "command": ["cycle", "mute"] }
         3. { "command": ["cycle", "pause"] }
-* Can have multiple instances of MPV running with different /tmp/sockets. Probably don't want more than like 3 since the Rpi is small and might get over worked.
+* Can have multiple instances of MPV running with different /tmp/sockets. Probably don't want too many since the Rpi is small and might get over worked, but it could be worth trying to have the 4 radio stations below all running as separate processes. We could have them running as services as well so that they kickoff at startup... hmmmmmm.... They would all have a different `/tmp/socket` file where commands are sent (by a python script? by a node script? also running as a service). When the tuner enters/leaves the stations range it sends the command to cycle that stations mute status. We would probably need to keep track of the currently playing station somewhere so that asking google to tune to a different sation or asking for a stop sends the message to the right socket. Maybe this means we should use the more explicit 
 
 ## Web radio urls:
 * Rock the Craddle Radio: https://rockthecradle.stream.publicradio.org/rockthecradle.mp3
