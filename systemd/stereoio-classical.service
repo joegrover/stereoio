@@ -1,0 +1,18 @@
+[Unit]
+Description=Stereio - Classical MPR
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=VIRTUAL_ENV=/home/pi/env
+Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/usr/bin/mpv --no-video --input-ipc-server=/tmp/mpvclassicalsocket --mute=yes https://cms.stream.publicradio.org/cms.mp3?cb=8600250482
+
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=jgrover
+
+[Install]
+WantedBy=multi-user.target
