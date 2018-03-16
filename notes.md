@@ -61,4 +61,5 @@
 - [ ] Scripted construction of service files.
 - [ ] Fork GassistPi to add support for my multi-station idea.
 - [ ] gpiozero based physical controls ([handy example](https://github.com/themagpimag/essentials-gpiozero/blob/master/09-Potentiometer/ch9listing4.py))
+- [ ] Can I script the edits to visudo?
 
