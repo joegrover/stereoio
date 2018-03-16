@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Environment=VIRTUAL_ENV=/home/pi/env
 Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ExecStart=/usr/bin/mpv --no-video --input-ipc-server=/tmp/mpvjazz88socket --mute=yes http://quarrel.str3am.com:7110/live_mp3
+ExecStart=/usr/bin/mpv --no-video --input-ipc-server=/tmp/stereoio-jazz88-socket --mute=yes http://quarrel.str3am.com:7110/live_mp3
 
 WorkingDirectory=/home/pi/
 StandardOutput=inherit
