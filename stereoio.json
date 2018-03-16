@@ -1,0 +1,38 @@
+{
+	"thecraddle": {
+		"stream": "https://rockthecradle.stream.publicradio.org/rockthecradle.mp3",
+		"service": "stereoio-thecraddle",
+		"band": [1020,1040],
+		"name": "Rock the Craddle"
+	},
+	"thecurrent": {
+		"stream": "https://current.stream.publicradio.org/kcmp.mp3",
+		"service": "stereoio-thecurrent",
+		"band": [890,900],
+		"name": "The Current"
+	},
+	"mpr": {
+		"stream": "https://nis.stream.publicradio.org/nis.mp3",
+		"service": "stereoio-mpr",
+		"band": [901,920],
+		"name": "MPR News"
+	},
+	"jazz88": {
+		"stream": "https://quarrel.str3am.com:7110/live_mp3",
+		"service": "stereoio-jazz88",
+		"band": [870,889],
+		"name": "Jazz 88"
+	},
+	"classical": {
+		"stream": "https://cms.stream.publicradio.org/cms.mp3?cb=8600250482",
+		"service": "stereoio-classical",
+		"band": [1041,1059],
+		"name": "Classical MPR"
+	},
+	"tuning": {
+		"stream": "/home/jgrover/Documents/pi/stereoio/fm_radio_tuning.mp3",
+		"service": "stereoio-tuning",
+		"band": [0,108],
+		"name": "Tuning"
+	}
+}

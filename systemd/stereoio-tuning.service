@@ -1,0 +1,18 @@
+[Unit]
+Description=Stereio - Tuning
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=VIRTUAL_ENV=/home/pi/env
+Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/usr/bin/mpv --no-video --input-ipc-server=/tmp/stereoio-tuning-socket --mute=yes --loop-file=yes /home/jgrover/Documents/pi/stereoio/fm_radio_tuning.mp3
+
+WorkingDirectory=/home/jgrover/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=jgrover
+
+[Install]
+WantedBy=multi-user.target
