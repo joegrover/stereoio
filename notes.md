@@ -44,6 +44,9 @@
 * while the `start` and `stop` commands require root, `is_active` and `is_inactive` do not
 * the systemd files will need a user name in them, I think...
 
+## Controlling via web?:
+* have node interact with the python script: https://medium.com/@HolmesLaurence/integrating-node-and-python-6b8454bfc272
+
 ## ToDo:
 - [X] Order DAC (HiFiBerry AMP2)
 - [ ] Wire up volume knob [try this?](https://gist.github.com/thijstriemstra/6396142f426aeffb0c1c6507fb2acd7b)
