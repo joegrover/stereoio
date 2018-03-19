@@ -50,6 +50,9 @@
 ## Controlling via web?:
 * have node interact with the python script: https://medium.com/@HolmesLaurence/integrating-node-and-python-6b8454bfc272
 
+## Other audio sources?:
+* Try adding pianobar, the cli based Pandora client
+
 ## ToDo:
 - [X] Order DAC (HiFiBerry AMP2)
 - [ ] Wire up volume knob [try this?](https://gist.github.com/thijstriemstra/6396142f426aeffb0c1c6507fb2acd7b)
