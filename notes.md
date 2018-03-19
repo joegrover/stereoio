@@ -51,7 +51,7 @@
 * have node interact with the python script: https://medium.com/@HolmesLaurence/integrating-node-and-python-6b8454bfc272
 
 ## Other audio sources?:
-* Try adding pianobar, the cli based Pandora client
+* Try adding pianobar, the cli based Pandora client [maybe this](https://creekhousemedia.com/2017/12/08/make-a-raspberry-pi-pandora-player/)
 
 ## ToDo:
 - [X] Order DAC (HiFiBerry AMP2)
