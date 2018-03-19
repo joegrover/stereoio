@@ -4,7 +4,7 @@ import json
 import sys
 
 dial = int(sys.argv[1])
-stop = sys.argv[2]
+close = sys.argv[2]
 currentStation = sys.argv[3]
 
 
@@ -62,7 +62,9 @@ def running(radio):
 
 def mute(radio):
     muteCommand = {"command": ("set_property", "mute", True)}
-    returnValue = os.system("echo '" + json.dumps(muteCommand) + "' | socat - " + radio.socket)
+    returnValue = os.system("echo '" +
+                            json.dumps(muteCommand) +
+                            "' | socat - " + radio.socket)
     return returnValue
 
 
@@ -75,7 +77,8 @@ def unmute(radio):
 
 def cycleMute(radio):
     cycleMuteCommand = {"command": ("cycle", "mute")}
-    echo = "echo '" + json.dumps(cycleMuteCommand) + "' | socat - " + radio.socket
+    echo = "echo '" + \
+           json.dumps(cycleMuteCommand) + "' | socat - " + radio.socket
     returnValue = os.system(echo)
     return returnValue
 
@@ -101,6 +104,20 @@ def restart(radio):
     return returnValue
 
 
+def shutdown(radios):
+    for radio in radios:
+        stop(radios[radio]["obj"])
+
+
+def fromServer(dial, close):
+    monitorDial(dial, radioBands)
+
+    if close == "True":
+        shutdown(radios)
+
+    print(str(currentStation.name))
+    sys.stdout.flush()
+
 json_data = open("stereoio.json").read()
 
 radios = json.loads(json_data)
@@ -114,17 +131,11 @@ for radio in radios:
     # Still not sure how to handle the "tuning" bands,
     radioBands[range(*radios[radio]["obj"].band)] = radios[radio]["obj"]
     start(radios[radio]["obj"])
+    # XXX Add some wait time here. if things need to start.
 
+if currentStation == "None":
+    currentStation = None
+else:
+    currentStation = radioBands[int(currentStation)]
 
-def shutdown(radios):
-    for radio in radios:
-        stop(radios[radio]["obj"])
-
-monitorDial(dial, radioBands)
-
-if stop == "True":
-    shutdown(radios)
-
-
-print(str(currentStation.name))
-sys.stdout.flush()
+fromServer(dial, close)

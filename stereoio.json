@@ -2,7 +2,7 @@
 	"thecraddle": {
 		"stream": "https://rockthecradle.stream.publicradio.org/rockthecradle.mp3",
 		"service": "stereoio-thecraddle",
-		"band": [1020,1040],
+		"band": [1020,1041],
 		"name": "Rock the Craddle"
 	},
 	"thecurrent": {
@@ -20,7 +20,7 @@
 	"jazz88": {
 		"stream": "https://quarrel.str3am.com:7110/live_mp3",
 		"service": "stereoio-jazz88",
-		"band": [870,889],
+		"band": [870,890],
 		"name": "Jazz 88"
 	},
 	"classical": {
@@ -32,7 +32,7 @@
 	"tuning": {
 		"stream": "/home/jgrover/Documents/pi/stereoio/fm_radio_tuning.mp3",
 		"service": "stereoio-tuning",
-		"band": [0,108],
+		"band": [0,1080],
 		"name": "Tuning"
 	}
 }
