@@ -41,11 +41,17 @@
 * Vern's Mix tape: https://www.youtube.com/watch?list=PLWTMAv08KxuPfzsHDTKvjmAi02Elhz6ZQ
 
 ## `systemctl` tidbits:
-* while the `start` and `stop` commands require root, `is_active` and `is_inactive` do not
+* ~while the `start` and `stop` commands require root, `is_active` and `is_inactive` do not~
+  * Manage by updating the visudo file to create a group for managing the radio systemd files
+    You still need to pass `sudo` with the command, but it will not prompt for a password.
 * the systemd files will need a user name in them, I think...
+* Consider using a [systemd template file](https://fedoramagazine.org/systemd-template-unit-files/)
 
 ## Controlling via web?:
 * have node interact with the python script: https://medium.com/@HolmesLaurence/integrating-node-and-python-6b8454bfc272
+
+## Other audio sources?:
+* Try adding pianobar, the cli based Pandora client [maybe this](https://creekhousemedia.com/2017/12/08/make-a-raspberry-pi-pandora-player/)
 
 ## ToDo:
 - [X] Order DAC (HiFiBerry AMP2)
