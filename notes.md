@@ -72,3 +72,6 @@
 - [ ] gpiozero based physical controls ([handy example](https://github.com/themagpimag/essentials-gpiozero/blob/master/09-Potentiometer/ch9listing4.py))
 - [ ] Can I script the edits to visudo?
 
+
+For rotary encoders:
+https://gitlab.com/tibernut/radioPi
