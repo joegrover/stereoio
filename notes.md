@@ -40,6 +40,9 @@
 * Vern's Dance Party: https://www.youtube.com/watch?list=PLWTMAv08KxuPRxkX2qAJBcVwmjn8RodGP
 * Vern's Mix tape: https://www.youtube.com/watch?list=PLWTMAv08KxuPfzsHDTKvjmAi02Elhz6ZQ
 
+## HifiBerry Amp2
+* GPIO you can't use: https://www.hifiberry.com/docs/hardware/gpio-usage-of-hifiberry-boards/
+
 ## `systemctl` tidbits:
 * ~while the `start` and `stop` commands require root, `is_active` and `is_inactive` do not~
   * Manage by updating the visudo file to create a group for managing the radio systemd files
